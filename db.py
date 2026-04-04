@@ -13,7 +13,6 @@ def create_database():
     with connect() as conn:
         cursor = conn.cursor()
         
-        # 1. Activăm suportul pentru Foreign Keys (FOARTE IMPORTANT pentru ON DELETE CASCADE)
         conn.execute("PRAGMA foreign_keys = ON")
 
         # 2. Tabelul MESE (Meals)
@@ -37,7 +36,7 @@ def create_database():
             )
         """)
         
-        # 4. Tabelul de legătură MESE-INGREDIENTE (Many-to-Many)
+        # 4. Tabelul de legătură MESE-INGREDIENTE 
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS meal_ingredients (
                 meal_id INTEGER,
@@ -77,7 +76,7 @@ def create_database():
                 FOREIGN KEY (meal_id) REFERENCES meals(id) ON DELETE CASCADE
             )
         """)
-        #7. Favorite Meals
+        #7. Tabelul Favorite Meals
         cursor.execute("""CREATE TABLE IF NOT EXISTS favorite_meals (
                        id INTEGER PRIMARY KEY AUTOINCREMENT,
                        user_id INTERGER,
