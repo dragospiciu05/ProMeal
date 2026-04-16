@@ -11,5 +11,7 @@ Determinarea automată a indicelui BMI (Body Mass Index)
 
 Persistența Datelor: Integrare completă cu SQLite pentru salvarea profilului, jurnalelor alimentare și a meselor favorite.
 
-În cadrul fișierelor este inclus test_client.py, o interfață de tip CLI destinată testării funcționalităților aplicației, precum și creării și populării bazei de date..
+În cadrul fișierelor este inclus test_client.py, o interfață de tip CLI destinată testării funcționalităților aplicației, precum și creării și populării bazei de date.
+
+Mesele sunt salvate in baza de date in tabelul (Meals) , iar ingredientele fiecareia sunt asociate prin tabelul de legatura (meals_ingredinets)
 
