@@ -51,12 +51,12 @@ def create_database():
         # 5. Tabelul UTILIZATORI
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT, -- Am pus 'id' cu litere mici pentru consistență
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 f_name TEXT,
                 l_name TEXT,
                 email TEXT NOT NULL UNIQUE,
                 password TEXT NOT NULL,
-                age INTEGER, -- TINYINT e suportat, dar INTEGER e standard în SQLite
+                age INTEGER,
                 weight INTEGER,
                 height INTEGER,
                 target TEXT DEFAULT NULL,
